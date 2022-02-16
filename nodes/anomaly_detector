@@ -1,0 +1,19 @@
+#! /usr/bin/env python
+# -*- coding: utf-8 -*-
+
+import rospy
+
+import feature_extractor
+from common import utils
+
+import anomaly_model
+
+def anomaly_detector():
+    rospy.init_node("anomaly_detector")
+    # extractor = feature_extractor.FeatureExtractorMobileNetV2_Block14()
+    model = anomaly_model.AnomalyModelSVG()
+
+if __name__ == "__main__":
+    try:
+        anomaly_detector()
+    except rospy.ROSInterruptException: pass
